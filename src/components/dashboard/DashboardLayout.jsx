@@ -8,6 +8,7 @@ import {
   FaUser,
   FaCheckSquare,
   FaWallet,
+  FaBlog,
   FaBars,
   FaTimes,
   FaSignOutAlt,
@@ -84,6 +85,15 @@ const DashboardLayout = () => {
               >
                 <FaWallet />
                 <span>Expense Manager</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/dashboard/blog-manager"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                <FaBlog />
+                <span>Blog Manager</span>
               </NavLink>
             </li>
           </ul>

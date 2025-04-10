@@ -25,6 +25,12 @@ import Dashboard from "./components/dashboard/Dashboard";
 import Profile from "./components/dashboard/Profile";
 import TodoList from "./components/dashboard/TodoList";
 import ExpenseManager from "./components/dashboard/ExpenseManager";
+import BlogManager from "./components/dashboard/BlogManager";
+import BlogEditor from "./components/dashboard/BlogEditor";
+
+// Public blog components
+import BlogPage from "./components/blog/BlogPage";
+import BlogDetail from "./components/blog/BlogDetail";
 
 // Styles
 import "./styles/global.css";
@@ -68,6 +74,28 @@ function App() {
                 }
               />
 
+              {/* Public blog routes */}
+              <Route
+                path="/blog"
+                element={
+                  <>
+                    <Header />
+                    <BlogPage />
+                    <Footer />
+                  </>
+                }
+              />
+              <Route
+                path="/blog/:id"
+                element={
+                  <>
+                    <Header />
+                    <BlogDetail />
+                    <Footer />
+                  </>
+                }
+              />
+
               {/* Protected dashboard routes */}
               <Route
                 path="/dashboard"
@@ -81,6 +109,9 @@ function App() {
                 <Route path="profile" element={<Profile />} />
                 <Route path="todo" element={<TodoList />} />
                 <Route path="expenses" element={<ExpenseManager />} />
+                <Route path="blog-manager" element={<BlogManager />} />
+                <Route path="blog-editor" element={<BlogEditor />} />
+                <Route path="blog-editor/:id" element={<BlogEditor />} />
               </Route>
 
               {/* Fallback route */}
